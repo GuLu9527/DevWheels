@@ -1,0 +1,68 @@
+# 测试环境配置
+spring:
+  application:
+    name: DevWheels-Test
+  # 使用MySQL测试数据库
+  datasource:
+    url: jdbc:mysql://localhost:3306/devwheels_test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&createDatabaseIfNotExist=true
+    username: ${DB_TEST_USERNAME:root}
+    password: ${DB_TEST_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # JPA配置  
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+# MyBatis-Plus测试配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+# 文件存储测试配置
+file:
+  storage:
+    type: local
+    root-path: ./test-uploads
+    url-prefix: /test-files
+
+# 文件上传测试配置
+servlet:
+  multipart:
+    max-file-size: 1MB
+    max-request-size: 10MB
+
+# 日志配置
+logging:
+  level:
+    com.dw: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# 测试专用配置
+test:
+  async:
+    # 异步任务测试配置
+    pool-size: 2
+    max-pool-size: 5
+    queue-capacity: 10
+  excel:
+    # Excel测试配置
+    max-rows: 1000
+    batch-size: 100
+  file:
+    # 文件测试配置
+    max-size: 1MB
+    allowed-types: jpg,png,pdf,txt,xlsx

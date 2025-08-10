@@ -14,10 +14,11 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
+out/
 
 ### NetBeans ###
 /nbproject/private/
@@ -31,3 +32,117 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Eclipse ###
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
+
+### Mac ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+### Windows ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+
+### Linux ###
+*~
+.nfs*
+
+### Logs ###
+logs/
+*.log
+*.log.*
+log/
+
+### Database ###
+*.db
+*.sqlite
+*.sqlite3
+
+### Application Specific ###
+uploads/
+/uploads/*
+test-uploads/
+/test-uploads/*
+temp/
+/temp/*
+cache/
+/cache/*
+
+### Environment Variables ###
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+### Package Files ###
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+### Backup Files ###
+*.orig
+*.rej
+*.bak
+*.backup
+*~
+
+### Node.js (if adding frontend) ###
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+### Compiled Class Files ###
+*.class
+
+### Maven Wrapper ###
+!.mvn/wrapper/maven-wrapper.jar
+!.mvn/wrapper/maven-wrapper.properties
+
+### Gradle Wrapper ###
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+### Custom ###
+# 文件上传目录
+file-storage/
+# 临时文件
+*.tmp
+# 个人配置
+application-local.yml
+application-dev.yml
+# 测试报告
+allure-results/
+test-output/
+# 性能测试
+jmeter.log
